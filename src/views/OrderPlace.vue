@@ -1,7 +1,8 @@
 <template>
-    <v-conatiner>
-        <h1>hi</h1>
-    </v-conatiner>
+    <v-container fluid class="h-100 w-100">
+    </v-container>
+
+
 
 </template>
 
