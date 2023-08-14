@@ -1,0 +1,8 @@
+@import "./constants.scss";
+
+html, body {
+    background-color: $mc-grey;
+    overflow-y: auto !important;
+    font-family: 'IBM Plex Mono', monospace;
+}
+

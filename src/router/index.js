@@ -1,16 +1,25 @@
 // Composables
+import HomeVue from '@/views/Home.vue'
+import OrderPlaceVue from '@/views/OrderPlace.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
     {
       path: '/',
       name: 'Home',
-      component: () => import('@/views/Home.vue'),
+      component: HomeVue,
     },
     {
       path: '/orderplace',
       name: 'OrderPlace',
-      component: () => import('@/views/OrderPlace.vue')
+      component: OrderPlaceVue,
+      children: [
+        {
+          path: '/',
+          name: 'Home',
+          component: HomeVue,
+        }
+      ]
     }
 ]
 
