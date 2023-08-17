@@ -4,7 +4,7 @@
             <v-col cols="3"/>
             <v-col cols="3" no-gutters align="center">
                 <v-row class="h-25" no-gutters/>
-                    <v-card class="v-card h-50 w-75" to="/home" no-gutters :ripple="false">
+                    <v-card class="v-card h-50 w-75" to="/" no-gutters :ripple="false">
                         <v-row class="w-100 h-25" no-gutters/>
 
                         <v-row align="center" class="pt-6 pr-4 pl-4" no-gutters>
@@ -28,7 +28,7 @@
 
             <v-col cols="3" no-gutters align="center">
                 <v-row class="h-25" no-gutters/>
-                    <v-card class="v-card h-50 w-75" to="/home" no-gutters :ripple="false">
+                    <v-card class="v-card h-50 w-75" to="/" no-gutters :ripple="false">
                         <v-row class="w-100 h-25" no-gutters/>
 
                         <v-row align="center" no-gutters class="pl-12 pr-12">

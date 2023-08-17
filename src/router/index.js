@@ -13,13 +13,6 @@ const routes = [
       path: '/orderplace',
       name: 'OrderPlace',
       component: OrderPlaceVue,
-      children: [
-        {
-          path: '/',
-          name: 'Home',
-          component: HomeVue,
-        }
-      ]
     }
 ]
 
