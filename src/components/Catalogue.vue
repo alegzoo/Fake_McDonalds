@@ -1,16 +1,45 @@
 <template>
-    <v-sheet
-    :height="1000"
-    :width="1000"
-    > 
-    </v-sheet>
-    <v-sheet>
-
-    </v-sheet>
-
+    <v-container fluid class="h-100 w-100" no-gutters style="padding: 0;">
+        <v-row no-gutters class="w-100 h-100 pa-0 width-row">
+            <v-col cols="auto" xs class="h-100 pt-6 cols-width pa-0" align="start">
+                <v-sheet
+                    class="v-sheet-one h-100"
+                    > 
+                </v-sheet>
+            </v-col>
+            <v-col cols="auto" class="h-100 pt-3 cols-width pa-0" align="start">
+                <v-sheet
+                    class="v-sheet-one h-100"
+                    > 
+                </v-sheet>
+            </v-col>
+            <v-col>
+                <v-sheet
+                    class="v-sheet-two h-100"
+                >
+                </v-sheet>
+            </v-col>
+        </v-row>
+    </v-container>
+    
 </template>
 
 <style lang="scss" scoped>
+.v-sheet-one {
+    border-left: 2px black solid;
+    border-top: 2px black solid;
+}
+
+
+.cols-width {
+    width: 20px !important;
+}
+
+.v-sheet-two{
+    border-left: 2px black solid;
+    border-top: 2px black solid;
+    border-right: 2px black solid;
+}
 
 </style>
 

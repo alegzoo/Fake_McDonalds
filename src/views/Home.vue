@@ -16,13 +16,13 @@
         </v-row>
 
 
-        <v-row no-gutters class="pt-3">
-            <v-col cols="3" align-self="left" no-gutters  class="navigation-bar pt-6 pb-6">
+        <v-row no-gutters class="pt-3 h-100">
+            <v-col cols="3" align-self="left" no-gutters  class="navigation-bar h-75">
                 <MenuBar/>
             </v-col>
 
 
-            <v-col cols="6">
+            <v-col cols="6" class="pl-6 h-100 w-100" no-gutters>
                 <Catalogue/>
             </v-col>
 
@@ -46,13 +46,14 @@
     overflow: hidden !important;
 }
 
-.navigation-bar{
+.navigation-bar * {
     background-color: white;
-    border-top: 3px solid black;
-    border-right: 3px solid black;
-    border-bottom: 3px solid black;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
+    max-width: 75% !important;
 }
 </style>
 

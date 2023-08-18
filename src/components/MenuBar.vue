@@ -1,19 +1,21 @@
 <template>
-    <v-list no-gutters style="padding: 0;">
-        <v-list-item variant="plain" class="item-in-list" v-for="(item, index) in menuItems" :key="index" value="1" :ripple="false">
-            <v-row no-gutters class="pa-2">
-                <v-col class="h-100" cols="3" align-self="center" align="center">
-                    <v-img :src="item.imageUrl" :width= item.width></v-img>
-                </v-col >
-                <v-col cols="auto" class="pl-5" align-self="center" align="center">
-                    <h2>{{ item.title }}</h2>
-                </v-col>
-            </v-row>
+    <v-card class="list-class pt-5 pb-3 pr-3">
+        <v-list no-gutters style="padding: 0;" >
+            <v-list-item variant="plain" class="item-in-list" v-for="(item, index) in menuItems" :key="index" value="1" :ripple="false">
+                <v-row no-gutters>
+                    <v-col class="h-100 pb-5" cols="3" align-self="center" align="center">
+                        <v-img :src="item.imageUrl" :width= item.width></v-img>
+                    </v-col >
+                    <v-col cols="auto" class="pl-5 pb-5" align-self="center" align="center">
+                        <h3>{{ item.title }}</h3>
+                    </v-col>
+                </v-row>
 
-            
-        </v-list-item>
+                
+            </v-list-item>
 
-    </v-list>
+        </v-list>
+    </v-card>
 </template>
 
 <style lang="scss" scoped>
@@ -21,6 +23,11 @@
 
 .item-in-list {
     background-color: transparent;
+}
+
+.list-class {
+  background-color: transparent;
+  box-shadow: none;
 }
 </style>
 
