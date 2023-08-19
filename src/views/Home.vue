@@ -17,7 +17,7 @@
 
 
         <v-row no-gutters class="pt-3 h-100">
-            <v-col cols="3" align-self="left" no-gutters  class="navigation-bar h-75">
+            <v-col cols="3" align-self="left" no-gutters class="navigation-bar h-75">
                 <MenuBar/>
             </v-col>
 
@@ -27,8 +27,8 @@
             </v-col>
 
 
-            <v-col cols="3">
-
+            <v-col cols="3" class="pl-12 h-auto w-100">
+                <Receipt/>
             </v-col>
         </v-row>
 
@@ -53,7 +53,7 @@
     border-bottom: 2px solid black;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
-    max-width: 75% !important;
+    max-width: 92% !important;
 }
 </style>
 
@@ -61,5 +61,6 @@
 
 import MenuBar from '@/components/MenuBar.vue';
 import Catalogue from '@/components/Catalogue.vue';
+import Receipt from '@/components/Receipt.vue';
 
 </script>

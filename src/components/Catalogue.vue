@@ -1,7 +1,7 @@
 <template>
     <v-container fluid class="h-100 w-100" no-gutters style="padding: 0;">
         <v-row no-gutters class="w-100 h-100 pa-0 width-row">
-            <v-col cols="auto" xs class="h-100 pt-6 cols-width pa-0" align="start">
+            <v-col cols="auto" class="h-100 pt-6 cols-width pa-0" align="start">
                 <v-sheet
                     class="v-sheet-one h-100"
                     > 
@@ -14,10 +14,7 @@
                 </v-sheet>
             </v-col>
             <v-col>
-                <v-sheet
-                    class="v-sheet-two h-100"
-                >
-                </v-sheet>
+                <MainMenu/>
             </v-col>
         </v-row>
     </v-container>
@@ -44,5 +41,8 @@
 </style>
 
 <script lang="js" setup>
+import MainMenu from '@/components/MainMenu.vue'
+
+
 
 </script>
