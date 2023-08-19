@@ -61,10 +61,14 @@
 
 .below-cut{
     background-color: $mc-green;
-    border-radius: 0px;
-    max-height: 8%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 0px;
+    max-height: 7%;
     border-left: black 2px solid;
     border-bottom: 2px black solid;
+
 }
 </style>
 
