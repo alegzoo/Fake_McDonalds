@@ -5,7 +5,11 @@
             <v-sheet class="paymentpart2"/>
         </v-card>
         <v-card class="below-cut h-100" elevation="0">
+            <v-row no-gutters class="h-100 w-100 px-7 pt-1">
+                    <v-slider class="slider-comp rounded-pill" color="#FFFFFF" :disable-ripple="true" :thumb-size="40" hide-details elevation="0" max="100" track-size="40" :active="false"></v-slider>
 
+            </v-row>
+            
         </v-card>
     </v-container>
 
@@ -65,10 +69,17 @@
     border-top-right-radius: 0px;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 0px;
-    max-height: 7%;
+    max-height: 9%;
     border-left: black 2px solid;
     border-bottom: 2px black solid;
 
+}
+
+.slider-comp::v-deep .v-slider-track * {
+    border-radius: 9999px;
+}
+.slider-comp::v-deep .v-slider-thumb {
+  margin-left: 20px;
 }
 </style>
 
