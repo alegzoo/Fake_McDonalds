@@ -7,7 +7,7 @@
                         <v-img :src="item.imageUrl" :width= item.width></v-img>
                     </v-col>
                     <v-col cols="auto" class="pl-7 pb-5" align-self="center" align="center">
-                        <h2>{{ item.title }}</h2>
+                        <h3>{{ item.title }}</h3>
                     </v-col>
                 </v-row>
 

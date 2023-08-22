@@ -15,7 +15,7 @@
                     <h3>{{ itemPrice }}€</h3>
                 </v-col>
                 <v-col cols="12" class="pb-5 pt-3" align="center" align-self="center">
-                    <NumberSpinner v-model="quantity" :min="1" :max="10" />
+                    <NumberInputSpinner v-model="quantity" :min="1" :max="10" />
                 </v-col>
             </v-row>    
         </v-card>
@@ -36,19 +36,11 @@
 </style>
 
 <script lang="js">
-//import NumberInputSpinner from 'vue-number-input-spinner';
-import NumberSpinner from './NumberSpinner.vue';
+import NumberInputSpinner from 'vue-number-input-spinner';
+//import NumberSpinner from './NumberSpinner.vue';
 
 
 export default {
-    components: {
-    NumberSpinner
-    },
-    data() {
-        return {
-            quantity: 1,
-        }
-    },
     props: {
         itemId: Number,
         itemName: String,

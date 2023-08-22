@@ -13,7 +13,7 @@
             </v-col>
             
             <v-col cols="4" align-self="center" align="center">
-                <h2 class="number-display">1</h2>
+                <h2 class="number-display">{{ value }}</h2>
             </v-col>
             
             <v-col cols="4" align-self="center" align="center">
@@ -32,10 +32,6 @@
 <style lang="scss" scoped>
 .v-row-top{
     border: 2px black solid;
-}
-
-.incr{
-    font-size: 30px;
 }
 </style>
 
