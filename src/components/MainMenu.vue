@@ -21,13 +21,13 @@
     border-radius: 0px;
 }
 
-.title{
+.title {
     color: black;
 }
 </style>
 
 
-<script>
+<script lang="js">
 
 import CatalogueItem from './CatalogueItem.vue';
 
@@ -38,8 +38,10 @@ export default {
   data() {
         return {
             catalogueData: [
-            { id: 1 , name: "Cheeseburger", width: 250, urlSource: 'src/assets/bigmac.png', price: 1.7 },
-            { id: 2 , name: "Hamburger", width: 200, urlSource: 'src/assets/hamburger.webp', price: 1.7 },
+            { id: 1 , name: "Bigmac", width: 250, urlSource: 'src/assets/bigmac.png', price: 1.7 },
+            { id: 2 , name: "Double Quarter Pounder", width: 250, urlSource: 'src/assets/doublequarterpunder.png', price: 1.7 },
+            { id: 3 , name: "Quarter Pounder with Cheese", width: 250, urlSource: 'src/assets/quarterPounderCheese.png', price: 1.7 },
+            { id: 4 , name: "Quarter Pounder w. Cheese Deluxe", width: 250, urlSource: 'src/assets/quarterPounderWithCheeseDeluxe.png', price: 1.7 },
         ]
     };
   },
