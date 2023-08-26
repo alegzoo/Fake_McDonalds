@@ -17,23 +17,22 @@
 <style lang="scss" scoped>
 @import "@/styles/constants.scss";
 .v-card-menu {
-    border: 2px black solid;
+    border-left: 2px black solid;
+    border-right: 2px black solid;
+    border-top: 2px black solid;
     border-radius: 0px;
+    overflow-y: auto;
+    max-block-size: 47%;
 }
 
 .title {
     color: black;
-}
-
-.row-products {
-    overflow-y: auto !important;
 }
 </style>
 
 
 <script lang="js">
 
-import { VVirtualScroll } from 'vuetify/lib/components/index.mjs';
 import CatalogueItem from './CatalogueItem.vue';
 
 export default {

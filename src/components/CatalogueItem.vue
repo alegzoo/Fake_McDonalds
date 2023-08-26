@@ -8,7 +8,7 @@
                         :width="itemWidth"
                     ></v-img>
                 </v-col>
-                <v-col cols="12" class="pt-7" align="center" align-self="center">
+                <v-col cols="12" class="pt-7 px-4" align="center" align-self="center">
                     <h3>{{ itemName }}</h3>
                 </v-col>
                 <v-col cols="12" class="pb-5 pt-3" align="center" align-self="center">

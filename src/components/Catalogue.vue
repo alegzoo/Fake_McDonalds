@@ -13,7 +13,7 @@
                     > 
                 </v-sheet>
             </v-col>
-            <v-col>
+            <v-col class="scroll-v-col">
                 <MainMenu/>
             </v-col>
         </v-row>
@@ -25,17 +25,12 @@
 .v-sheet-one {
     border-left: 2px black solid;
     border-top: 2px black solid;
+    max-block-size: 50%;
 }
 
 
 .cols-width {
     width: 20px !important;
-}
-
-.v-sheet-two{
-    border-left: 2px black solid;
-    border-top: 2px black solid;
-    border-right: 2px black solid;
 }
 
 </style>

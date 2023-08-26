@@ -1,9 +1,9 @@
 @import "./constants.scss";
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400&display=swap');
 
 html, body {
     background-color: $mc-grey;
-    overflow-y: hidden !important;
     font-family: 'IBM Plex Mono', monospace;
+    overflow-y: hidden;
 }
 

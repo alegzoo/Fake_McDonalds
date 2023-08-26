@@ -42,7 +42,7 @@
     font-size: 40px !important;
 }
 
-.cont {
+.cont * {
     overflow: hidden !important;
 }
 
