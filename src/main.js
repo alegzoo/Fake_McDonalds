@@ -20,3 +20,14 @@ const app = createApp(App)
 registerPlugins(app)
 
 app.mount('#app')
+
+Vue.prototype.$eventBus = new Vue();
+
+new Vue({
+  el: '#app',
+  render: h => h(App),
+  components: {
+    SenderComponent,
+    ReceiverComponent
+  }
+});

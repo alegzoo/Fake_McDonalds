@@ -4,17 +4,19 @@
             <v-col cols="auto" class="h-100 pt-6 cols-width pa-0" align="start">
                 <v-sheet
                     class="v-sheet-one h-100"
+                    :elevation="8"
                     > 
                 </v-sheet>
             </v-col>
             <v-col cols="auto" class="h-100 pt-3 cols-width pa-0" align="start">
                 <v-sheet
                     class="v-sheet-one h-100"
+                    :elevation="4"
                     > 
                 </v-sheet>
             </v-col>
             <v-col class="scroll-v-col">
-                <MainMenu/>
+                <MainMenu :elevation="8"/>
             </v-col>
         </v-row>
     </v-container>
