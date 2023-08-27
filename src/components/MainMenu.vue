@@ -7,7 +7,7 @@
                 </v-col>
             </v-row>
             <v-row class="h-auto w-auto px-2">
-                <div v-if="currentCategory === 'Burgers'">
+                <div v-if="currentCategory === 'Burgers'">                    
                     <CatalogueItem v-for="item in Burgers" :itemName="item.name" :itemUrlSource="item.urlSource" :itemWidth="item.width" :itemPrice="item.price"/>
                 </div>
                 <div v-if="currentCategory === 'Additions'"> 
@@ -40,19 +40,31 @@
 
 import CatalogueItem from './CatalogueItem.vue';
 import MenuBar from './MenuBar.vue';
+import MenuBarButton from './MenuBarButton.vue';
+import eventBus from '@/plugins/eventBus';
 
 export default {
     components: {
         CatalogueItem,
-        MenuBar
-},
-    props: {
-        currentCategory: String
-},
-  data() {
+        MenuBar,
+        MenuBarButton
+    },
+    methods: {
+        handleData(data) {
+            this.receivedData = data;
+        },
+    },    
+    created() {
+    eventBus.$on('data-sent', this.handleData);
+    },
+    beforeDestroy() {
+    eventBus.$off('data-sent', this.handleData);
+    },
+    data() {
         return {
-            categories: [ 'Burgers', 'Additions', 'Sauces', 'Desserts', 'Drinks', 'Breakfast', 'McCafé', 'Happy Meal' ],
-            currentCategory: 'Additions',
+            receivedData: '',
+
+            currentCategory : receivedData,
 
             Burgers: [
             { id: 1 , name: "Bigmac", width: 250, urlSource: 'src/assets/bigmac.png', price: 4.2 },
