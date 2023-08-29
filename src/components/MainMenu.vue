@@ -3,14 +3,14 @@
         <v-card class="h-100 v-card-menu">
             <v-row class="h-auto w-auto">
                 <v-col class="pa-9">
-                    <h1 class="title">{{ currentCategory }}</h1>
+                    <h1 class="title">{{ currentCategorySelected }}</h1>
                 </v-col>
             </v-row>
             <v-row class="h-auto w-auto px-2">
-                <div v-if="currentCategory === 'Burgers'">                    
+                <div v-if="currentCategorySelected === 'Burgers'">                    
                     <CatalogueItem v-for="item in Burgers" :itemName="item.name" :itemUrlSource="item.urlSource" :itemWidth="item.width" :itemPrice="item.price"/>
                 </div>
-                <div v-if="currentCategory === 'Additions'"> 
+                <div v-else-if="currentCategorySelected === 'Additions'"> 
                     <CatalogueItem v-for="item in Additions" :itemName="item.name" :itemUrlSource="item.urlSource" :itemWidth="item.width" :itemPrice="item.price"/>
                 </div>
             </v-row>
@@ -33,6 +33,7 @@
 .title {
     color: black;
 }
+
 </style>
 
 
@@ -41,7 +42,6 @@
 import CatalogueItem from './CatalogueItem.vue';
 import MenuBar from './MenuBar.vue';
 import MenuBarButton from './MenuBarButton.vue';
-import eventBus from '@/plugins/eventBus';
 
 export default {
     components: {
@@ -49,23 +49,9 @@ export default {
         MenuBar,
         MenuBarButton
     },
-    methods: {
-        handleData(data) {
-            this.receivedData = data;
-        },
-    },    
-    created() {
-    eventBus.$on('data-sent', this.handleData);
-    },
-    beforeDestroy() {
-    eventBus.$off('data-sent', this.handleData);
-    },
     data() {
-        return {
-            receivedData: '',
-
-            currentCategory : receivedData,
-
+        return {            
+            currentCategorySelected: 'Burgers',
             Burgers: [
             { id: 1 , name: "Bigmac", width: 250, urlSource: 'src/assets/bigmac.png', price: 4.2 },
             { id: 2 , name: "Double Quarter Pounder", width: 250, urlSource: 'src/assets/doublequarterpunder.png', price: 3.7 },
@@ -84,6 +70,6 @@ export default {
             { id: 3 , name: "Large Fries", width: 250, urlSource: 'src/assets/largeF.jpeg', price: 4.2 }
             ],
     };
-  },
+    },
 };
 </script>
