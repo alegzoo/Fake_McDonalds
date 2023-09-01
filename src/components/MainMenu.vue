@@ -37,7 +37,7 @@
 </style>
 
 
-<script lang="js">
+<script>
 
 import CatalogueItem from './CatalogueItem.vue';
 import MenuBar from './MenuBar.vue';
@@ -47,11 +47,11 @@ export default {
     components: {
         CatalogueItem,
         MenuBar,
-        MenuBarButton
+        MenuBarButton,
     },
     data() {
-        return {            
-            currentCategorySelected: 'Burgers',
+        return {      
+
             Burgers: [
             { id: 1 , name: "Bigmac", width: 250, urlSource: 'src/assets/bigmac.png', price: 4.2 },
             { id: 2 , name: "Double Quarter Pounder", width: 250, urlSource: 'src/assets/doublequarterpunder.png', price: 3.7 },
