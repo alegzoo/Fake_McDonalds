@@ -19,7 +19,7 @@
         <v-row no-gutters class="h-100">
             <v-col cols="3" no-gutters class="navigation-bar">
                 <v-card class="list-class pt-8 nav-card">
-                    <v-list no-gutters style="padding: 0;" class="pl-4">
+                    <v-list no-gutters style="padding: 0;" class="pl-2">
                         <MenuBarButton :value="1" title="Burgers" imageUrl="src/assets/burgers.svg" :width="40" @click="currentCategorySelected = 'Burgers'"/>
                         <MenuBarButton :value="2" title="Additions" imageUrl="src/assets/additions.svg" :width="33" @click="currentCategorySelected = 'Additions'"/>
                         <MenuBarButton :value="3" title="Sauces" imageUrl="src/assets/sauces.svg" :width="38" @click="currentCategorySelected = 'Sauces'"/>
@@ -33,7 +33,7 @@
             </v-col>
 
 
-            <v-col cols="6" class="pl-6 h-100 w-100" no-gutters>
+            <v-col cols="6" class="pl-6" no-gutters>
                 <v-container fluid class="h-100 w-100" no-gutters style="padding: 0;">
                     <v-row no-gutters class="w-100 h-100 pa-0 width-row">
                         <v-col cols="auto" class="h-100 pt-6 cols-width pa-0" align="start">
@@ -127,6 +127,8 @@
     border-top: 2px black solid;
     border-radius: 0px;
     overflow-y: auto;
+    max-block-size: 100%;
+    
 }
 
 .title {
