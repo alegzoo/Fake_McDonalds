@@ -7,7 +7,7 @@
                 </v-col>
             </v-row>
             <v-row class="h-auto w-auto px-2">
-                <div v-if="currentCategorySelected === 'Burgers'">                    
+                <div v-if="currentCategorySelected === 'Burgers'">   
                     <CatalogueItem v-for="item in Burgers" :itemName="item.name" :itemUrlSource="item.urlSource" :itemWidth="item.width" :itemPrice="item.price"/>
                 </div>
                 <div v-else-if="currentCategorySelected === 'Additions'"> 
@@ -50,8 +50,7 @@ export default {
         MenuBarButton,
     },
     data() {
-        return {      
-
+        return {   
             Burgers: [
             { id: 1 , name: "Bigmac", width: 250, urlSource: 'src/assets/bigmac.png', price: 4.2 },
             { id: 2 , name: "Double Quarter Pounder", width: 250, urlSource: 'src/assets/doublequarterpunder.png', price: 3.7 },
@@ -69,7 +68,7 @@ export default {
             { id: 2 , name: "Medium Fries", width: 250, urlSource: 'src/assets/mediumF.jpeg', price: 4.2 },
             { id: 3 , name: "Large Fries", width: 250, urlSource: 'src/assets/largeF.jpeg', price: 4.2 }
             ],
-    };
+        };
     },
 };
 </script>
