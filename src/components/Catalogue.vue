@@ -27,7 +27,7 @@
 .v-sheet-one {
     border-left: 2px black solid;
     border-top: 2px black solid;
-    max-block-size: 50%;
+    max-block-size: 100%;
 }
 
 
