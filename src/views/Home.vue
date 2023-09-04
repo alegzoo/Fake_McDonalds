@@ -20,7 +20,7 @@
             <v-col cols="3" no-gutters class="navigation-bar w-100" style="padding: 0px;">
                 <v-card class="list-class pt-8 nav-card">
                     <v-list no-gutters style="padding: 0;" class="pl-1" :active-class="customActiveClass" v-model="selectedItem" @click="toggleItem">
-                        <MenuBarButton v-if="selectedItem" :value="1" title="Burgers" imageUrl="src/assets/burgers.svg" :width="40" @click="currentCategorySelected = 'Burgers'"/>
+                        <MenuBarButton :value="1" title="Burgers" imageUrl="src/assets/burgers.svg" :width="40" @click="currentCategorySelected = 'Burgers'"/>
                         <MenuBarButton :value="2" title="Additions" imageUrl="src/assets/additions.svg" :width="33" @click="currentCategorySelected = 'Additions'"/>
                         <MenuBarButton :value="3" title="Sauces" imageUrl="src/assets/sauces.svg" :width="38" @click="currentCategorySelected = 'Sauces'"/>
                         <MenuBarButton :value="4" title="Desserts" imageUrl="src/assets/deserts.svg" :width="24" @click="currentCategorySelected = 'Desserts'"/>
@@ -128,7 +128,9 @@
     color: black;
 }
 .custom-active-class {
-    background-color: red;
+    font-weight: bold;
+    color: black;
+    opacity: 100%;
 }
 </style>
 
