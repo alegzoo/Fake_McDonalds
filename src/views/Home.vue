@@ -17,7 +17,7 @@
 
 
         <v-row no-gutters class="h-100 w-100">
-            <v-col cols="3" no-gutters class="navigation-bar w-100" style="padding: 0px;">
+            <v-col sm="3" no-gutters class="navigation-bar" style="padding: 0px;">
                 <v-card class="list-class pt-8 nav-card">
                     <v-list no-gutters style="padding: 0;" class="pl-1" :active-class="customActiveClass" v-model="selectedItem" @click="toggleItem">
                         <MenuBarButton :value="1" title="Burgers" imageUrl="src/assets/burgers.svg" :width="40" @click="currentCategorySelected = 'Burgers'"/>
@@ -33,7 +33,7 @@
             </v-col>
             
 
-            <v-col cols="6" class="pl-6" no-gutters>
+            <v-col sm="6" class="pl-6" no-gutters>
                 <v-container fluid class="h-100 w-100" no-gutters style="padding: 0;">
                     <v-row no-gutters class="w-100 h-100 pa-0 width-row">
                         <v-col cols="auto" class="h-100 pt-6 cols-width pa-0" align="start">
@@ -70,11 +70,19 @@
             </v-col>
 
 
-            <v-col cols="3" class="pl-12 h-50 w-100">
-                <Receipt/>
+            <v-col sm="3" class="pl-12 h-100 w-100">
+                <v-container no-gutters fluid style="padding: 0" class="h-50">
+                    <v-card class="v-card-receipt pa-0" elevation="0" no-gutters>
+                        <v-sheet class="paymentpart"/>
+                        <v-sheet class="paymentpart2"/>
+                    </v-card>
+                    <v-card class="below-cut h-100" elevation="0">
+                        <v-row no-gutters class="h-100 w-100 px-7 pt-1">
+                        </v-row>
+                    </v-card>
+                </v-container>
             </v-col>
         </v-row>
-
     </v-container>
 
 
@@ -98,7 +106,7 @@
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     max-height: 72% !important;
-
+    max-width: 80%;
 }
 
 .nav-card {
@@ -131,6 +139,66 @@
     font-weight: bold;
     color: black;
     opacity: 100%;
+}
+
+
+
+
+@import "@/styles/constants.scss";
+.v-card-receipt{
+    border-radius: 0px;
+    height: auto;
+    min-height: 50%;
+    box-shadow: none;
+
+    position: relative;
+
+    background: white;
+    border-top: 2px black solid;
+    border-left: 2px black solid;
+}
+
+
+.paymentpart::before{
+    background: linear-gradient(-45deg, black 18px, black 18px, transparent 0), linear-gradient(45deg, black 18px, transparent 0);
+    background-position: left top;
+    background-repeat: repeat-x;
+    background-size: 35px 35px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 32px;
+}
+
+
+
+.paymentpart2::before{
+    background: linear-gradient(-45deg, $mc-green 16px, $mc-green 16px, transparent 0), linear-gradient(45deg, $mc-green 16px, transparent 0);
+    background-position: left top;
+    background-repeat: repeat-x;
+    background-size: 35px 35px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 32px;
+}
+
+.below-cut{
+    background-color: $mc-green;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 0px;
+    max-height: 9%;
+    border-left: black 2px solid;
+    border-bottom: 2px black solid;
+
 }
 </style>
 
