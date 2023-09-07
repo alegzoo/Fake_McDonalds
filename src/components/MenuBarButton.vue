@@ -16,13 +16,12 @@
 </style>
 
 <script lang="js">
-
 export default {
     props: {
         title: String,
         imageUrl: String,
         width: Number,
         value: Number,
-    }
+    },
 }
 </script>
