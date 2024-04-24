@@ -1,7 +1,5 @@
-# essentials
-
-## Project setup
-
+# McDonald's kiosk emulation
+# frontend webapp emulating proccesses of McDonald's kiosk
 ```
 # yarn
 yarn
@@ -51,8 +49,3 @@ npm run lint
 # pnpm
 pnpm lint
 ```
-
-### Customize configuration
-
-See [Configuration Reference](https://vitejs.dev/config/).
-# Fake_McDonalds
