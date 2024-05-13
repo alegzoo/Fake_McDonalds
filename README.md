@@ -11,6 +11,6 @@ This web application emulates the ordering process at a McDonald's kiosk, provid
 - **Responsive Design**: Optimized for both desktop and touchscreen devices. <br>
   
 # Technologies Used
-  **Frontend Framework:** Vue.js<br>
-  **Language**: TypeScript<br>
-  **Styling**: SCSS <br>
+- **Frontend Framework:** Vue.js<br>
+- **Language**: TypeScript<br>
+- **Styling**: SCSS <br>
