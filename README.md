@@ -14,3 +14,6 @@ This web application emulates the ordering process at a McDonald's kiosk, provid
 - **Frontend Framework:** Vue.js<br>
 - **Language**: TypeScript<br>
 - **Styling**: SCSS <br>
+
+# Project status
+in progress...
