@@ -34,6 +34,7 @@
                 block
                 variant="text"
                 :ripple="false"
+                @click="sendToReceipt(itemNumOfItems)"
                 >
                 <v-icon size="large" class="cart-icon" icon="mdi-cart-variant"/>
                 </v-btn>
@@ -87,7 +88,11 @@ export default {
             if (this.itemNumOfItems > this.itemMinValue) {
                 this.itemNumOfItems--;
             }
-        }  
+        },
+        sendToReceipt(numItems) {
+            this.$emit('sendToReceiptToggled', numItems);
+            console.log(numItems)
+        }
     }
 }
 </script>

@@ -1,9 +1,21 @@
 @import "./constants.scss";
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400&display=swap');
+
+@font-face {
+    font-family: 'AmericanTypewriter'; /* Give a name to your font */
+    src: url('../fonts/FontsFree-Net-american-typewriter-1.ttf') format('truetype'); /* Modern Browsers */
+    font-weight: normal; /* Define the weight of the font */
+    font-style: normal; /* Define the style of the font */
+}
+
+@font-face {
+    font-family: 'Dotted'; /* Give a name to your font */
+    src: url('../fonts/fake_receipt.otf') format('opentype'); /* Modern Browsers */
+    font-weight: normal; /* Define the weight of the font */
+    font-style: normal; /* Define the style of the font */
+}
 
 html, body {
     background-color: $mc-grey;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'AmericanTypewriter', monospace;
     overflow-y: hidden;
 }
-

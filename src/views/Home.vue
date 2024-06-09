@@ -4,41 +4,38 @@
             <v-col cols="auto">
                 <v-img
                 :width="70"
-                src="src/assets/Mc-logo.svg"
+                src="src/assets/mc-logo2.svg"
                 >
                 </v-img>
                 
             </v-col>
 
             <v-col cols="auto" class="pl-8" align-self="center">
-                <h1 class="title-mc">McDonalds</h1>
+                <h1 class="title-mc">McDonald's</h1>
             </v-col>
         </v-row>
 
 
         <v-row no-gutters class="h-100 w-100">
-            <v-col sm="3">
-                <v-card class="list-class pt-8 nav-card">
-                    <v-list no-gutters style="padding: 0;" class="pl-3" :active-class="customActiveClass" @click="toggleItem">
-                        <span>
-                            <MenuBarButton v-if="numOfTriggers === 0" class="default-item" :value="1" title="Burgers" imageUrl="src/assets/burgers.svg" :width="40" @click="scrollFunc"/>
-                        </span>
-                        <MenuBarButton v-if="numOfTriggers != 0" :value="1" title="Burgers" imageUrl="src/assets/burgers.svg" :width="40" @click="currentCategory('Burgers'), scrollFunc, numOfTriggers++"/>
-                        <MenuBarButton :value="2" title="Additions" imageUrl="src/assets/additions.svg" :width="33" @click="currentCategory('Additions'), scrollFunc, numOfTriggers++"/>
-                        <MenuBarButton :value="3" title="Sauces" imageUrl="src/assets/sauces.svg" :width="38" @click="currentCategory('Sauces'), scrollFunc, numOfTriggers++"/>
-                        <MenuBarButton :value="4" title="Desserts" imageUrl="src/assets/deserts.svg" :width="24" @click="currentCategory('Desserts'), scrollFunc, numOfTriggers++"/>
-                        <MenuBarButton :value="5" title="Drinks" imageUrl="src/assets/drinks.svg" :width="20" @click="currentCategory('Drinks'), scrollFunc, numOfTriggers++"/>
-                        <MenuBarButton :value="6" title="Breakfast" imageUrl="src/assets/breakfast.svg" :width="45" @click="currentCategory('Breakfast'), scrollFunc, numOfTriggers++"/>
-                        <MenuBarButton :value="7" title="McCafé" imageUrl="src/assets/cafe.svg" :width="26" @click="currentCategory('McCafé'), scrollFunc, numOfTriggers++"/>
-                        <MenuBarButton :value="8" class="pb-4" title="Happy Meal" imageUrl="src/assets/happymeal.svg" :width="30" @click="currentCategory('Happy Meal'), scrollFunc, numOfTriggers++"/>
+            <v-col cols="3">
+                <v-card class="pt-8 nav-card">
+                    <v-list no-gutters style="padding: 0;" class="pl-3 v-list" mandatory="true"  :active-class="customActiveClass" @click="toggleItem">
+                        <MenuBarButton class="menu-item" :class="{ active: selectedMenuItem === 1 }" @click="currentCategory('Burgers', 1)" :value="1" title="Burgers" imageUrl="src/assets/burgers.svg" :width="40"/>
+                        <MenuBarButton class="menu-item" :class="{ active: selectedMenuItem === 2 }" @click="currentCategory('Additions', 2)" :value="2" title="Additions" imageUrl="src/assets/additions.svg" :width="33"/>
+                        <MenuBarButton class="menu-item" :class="{ active: selectedMenuItem === 3 }" @click="currentCategory('Sauces', 3)" :value="3" title="Sauces" imageUrl="src/assets/sauces.svg" :width="38"/>
+                        <MenuBarButton class="menu-item" :class="{ active: selectedMenuItem === 4 }" @click="currentCategory('Desserts', 4)" :value="4" title="Desserts" imageUrl="src/assets/deserts.svg" :width="24"/>
+                        <MenuBarButton class="menu-item" :class="{ active: selectedMenuItem === 5 }" @click="currentCategory('Drinks', 5)" :value="5" title="Drinks" imageUrl="src/assets/drinks.svg" :width="20"/>
+                        <MenuBarButton class="menu-item" :class="{ active: selectedMenuItem === 6 }" @click="currentCategory('Breakfast', 6)" :value="6" title="Breakfast" imageUrl="src/assets/breakfast.svg" :width="45"/>
+                        <MenuBarButton class="menu-item" :class="{ active: selectedMenuItem === 7 }" @click="currentCategory('McCafé', 7)" :value="7" title="McCafé" imageUrl="src/assets/cafe.svg" :width="26"/>
+                        <MenuBarButton class="menu-item" :class="{ active: selectedMenuItem === 8 }" @click="currentCategory('Happy Meal', 8)" :value="8" title="Happy Meal" imageUrl="src/assets/happymeal.svg" :width="30"/>
                     </v-list>
                 </v-card>
             </v-col>
             
 
-            <v-col sm="6" class="pl-6" no-gutters>
+            <v-col cols="6" class="pl-6" no-gutters>
                 <v-container fluid class="h-100 w-100" no-gutters style="padding: 0;">
-                    <v-row no-gutters class="w-100 h-100 pa-0 width-row">
+                    <v-row no-gutters class="w-100 h-100 pa-0">
                         <v-col :elevation="8" cols="auto" class="h-100 pt-6 cols-width1 pa-0" align="start">
                             <v-sheet
                                 class="v-sheet-one h-100"
@@ -51,38 +48,33 @@
                                 > 
                             </v-sheet>
                         </v-col>
-                        <v-col class="v-scroll">
-                            <v-container no-gutters fluid style="padding: 0" class="h-100 w-100" float>
-                                    <v-card class="h-100 v-card-menu">
-                                        <v-row class="h-auto w-auto">
-                                            <v-col class="pa-9">
-                                                <h1 class="title">{{ currentCategorySelected }}</h1>
-                                            </v-col>
-                                        </v-row>
-                                        <v-row class="h-auto w-auto px-2">
-                                            <CatalogueItem v-if="currentCategorySelected === 'Burgers'" v-for="item in Burgers" :itemName="item.name" :itemUrlSource="item.urlSource" :itemWidth="item.width" :itemPrice="item.price"/>
-                                            <CatalogueItem v-else-if="currentCategorySelected === 'Additions'" v-for="item in Additions" :itemName="item.name" :itemUrlSource="item.urlSource" :itemWidth="item.width" :itemPrice="item.price"/>
-                                            <CatalogueItem v-else-if="currentCategorySelected === 'Sauces'" v-for="item in Sauces" :itemName="item.name" :itemUrlSource="item.urlSource" :itemWidth="item.width" :itemPrice="item.price"/>
-                                        </v-row>
-                                    </v-card>
-                            </v-container>
+                        <v-col class="h-100 w-100" no-gutters style="padding: 0px">
+                            <v-card class="h-100 px-2" id="v-card-menu">
+                                <v-row class="w-auto v-card-item1" no-gutters style="padding: 0px">
+                                    <v-row class="w-100" no-gutters style="padding: 0px">
+                                        <v-col class="pa-9 header">
+                                            <h1 class="title">{{ currentCategorySelected }}</h1>
+                                        </v-col>
+                                    </v-row>
+                                </v-row>
+                                <v-row class="px-0 v-card-item2" no-gutters style="padding: 0px">
+                                    <v-row class="w-100 h-100 px-0">
+                                        <CatalogueItem @addToCartItemInfo="handleAddToCart" style="overflow: hidden;" v-if="currentCategorySelected === 'Burgers'" v-for="item in Burgers" :itemName="item.name" :itemUrlSource="item.urlSource" :itemWidth="item.width" :itemPrice="item.price" />
+                                        <CatalogueItem v-else-if="currentCategorySelected === 'Additions'" v-for="item in Additions" :itemName="item.name" :itemUrlSource="item.urlSource" :itemWidth="item.width" :itemPrice="item.price"/>
+                                        <CatalogueItem v-else-if="currentCategorySelected === 'Sauces'" v-for="item in Sauces" :itemName="item.name" :itemUrlSource="item.urlSource" :itemWidth="item.width" :itemPrice="item.price"/>
+                                    </v-row>
+                                </v-row>
+                            </v-card>
                         </v-col>
                     </v-row>
                 </v-container>
             </v-col>
 
 
-            <v-col sm="3" class="pl-12 h-100 w-100">
-                <v-container no-gutters fluid style="padding: 0" class="h-50">
-                    <v-card class="v-card-receipt pa-0" elevation="0" no-gutters>
-                        <v-sheet class="paymentpart"/>
-                        <v-sheet class="paymentpart2"/>
-                    </v-card>
-                    <v-card class="below-cut h-100" elevation="0">
-                        <v-row no-gutters class="h-100 w-100 px-7 pt-1">
-                        </v-row>
-                    </v-card>
-                </v-container>
+            <v-col cols="3" class=" col-rec" align="right">
+                <v-row class="receipt-col pt-3 w-auto" align="right">
+                    <Receipt class="receipt-itself" :arrOfItems="itemsArr"/>
+                </v-row>
             </v-col>
         </v-row>
     </v-container>
@@ -91,12 +83,14 @@
 </template>
 
 <style lang="scss" scoped>
-.title-mc{
-    font-size: 40px !important;
+@import "@/styles/constants.scss";
+
+.cont {
+    overflow: hidden
 }
 
-.cont * {
-    // overflow: hidden !important;
+.title-mc{
+    font-size: 40px !important;
 }
 
 .nav-card {
@@ -109,12 +103,14 @@
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     width: 330px;
+    box-shadow: 1px 0px 10px 0.05px rgb(160, 160, 160);
 }
+
 .v-sheet-one {
     border-left: 2px black solid;
     border-top: 2px black solid;
+    box-shadow: -1px 0px 10px 0.05px rgb(160, 160, 160);
 }
-
 
 .cols-width1 {
     width: 20px !important;
@@ -127,117 +123,121 @@
 }
 
 
-.v-card-menu {
+#v-card-menu {
     border-left: 2px black solid;
     border-right: 2px black solid;
     border-top: 2px black solid;
     border-radius: 0px;
-    overflow-y: scroll !important;
-    max-block-size: 48%;
-    display: block;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: auto;
+    max-height: 86vh;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $mc-yellow;
+    box-shadow: -1px 0px 10px 0.05px rgb(160, 160, 160);
+
+}
+
+.v-card-item1 {
+    height: auto;
 }
 
 .title {
     color: black;
 }
+
 .custom-active-class {
     font-weight: bold;
     color: black;
     opacity: 100%;
 }
 
-.default-item {
-    font-weight: bold;
-    color: black;
-    opacity: 100%;
+.receipt-col {
+    margin-left: 15%;
+    position: relative;
 }
 
-.v-scroll {
+.receipt-itself {
+    box-shadow: -1px 0px 10px 0.05px rgb(160, 160, 160);
+    border-bottom-left-radius: 12px;
+    overflow-y: visible;
+}
 
+.menu-item.active {
+    opacity: 1;
+}
+
+.menu-item.active:before {
+    background-color: $mc-red;
+    border: 2px black solid;
+    width: 15px;
+    height: 50px;
+    position: absolute;
+    left: -15px;
+    top: 0px;
+    content: "";
+    opacity: 1;
 }
 
 @import "@/styles/constants.scss";
-.v-card-receipt{
-    border-radius: 0px;
-    height: auto;
-    min-height: 50%;
-    box-shadow: none;
-
-    position: relative;
-
-    background: white;
-    border-top: 2px black solid;
-    border-left: 2px black solid;
-}
-.paymentpart::before{
-    background: linear-gradient(-45deg, black 18px, black 18px, transparent 0), linear-gradient(45deg, black 18px, transparent 0);
-    background-position: left top;
-    background-repeat: repeat-x;
-    background-size: 35px 35px;
-    content: " ";
-    display: block;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    height: 32px;
-}
-.paymentpart2::before{
-    background: linear-gradient(-45deg, $mc-green 16px, $mc-green 16px, transparent 0), linear-gradient(45deg, $mc-green 16px, transparent 0);
-    background-position: left top;
-    background-repeat: repeat-x;
-    background-size: 35px 35px;
-    content: " ";
-    display: block;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    height: 32px;
-}
-
-.below-cut{
-    background-color: $mc-green;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 0px;
-    max-height: 9%;
-    border-left: black 2px solid;
-    border-bottom: 2px black solid;
-
-}
 </style>
 
 <script lang="js">
 import MenuBarButton from '@/components/MenuBarButton.vue';
 import CatalogueItem from '@/components/CatalogueItem.vue';
+import Receipt from '@/components/Receipt.vue';
 
 export default {
+created() {
+    if (this.selectedMenuItem == null) {
+        this.currentCategorySelected = 'Burgers';
+        this.selectedMenuItem = 1;
+    }
+},
 components: {
     MenuBarButton,
     CatalogueItem,
+    Receipt
 },
 methods: {
+    scrollFunc() {
+        let mainMenu = document.getElementById('v-card-menu');
+        
+        if (mainMenu) {
+            mainMenu.scrollTop = 0;
+        }
+    },
     toggleItem() {
         this.isActive = !this.isActive;
+        this.scrollFunc();
     },
-    currentCategory(category) {
+    currentCategory(category, value) {
         this.currentCategorySelected = category;
+        this.selectedMenuItem = value;
     },
-    scrollFunc() {
-        let mainMenu = document.getElementById('main-menu');
-        mainMenu.scrollTop = 0;
-    }
+    sendToReceiptFromParent(data) {
+        console.log("Price Total:", data.priceForItems, "Item Name Total:", data.itemCombined);
+
+        this.recievedPriceTotal = data.priceForItems;
+        this.recievedItemNameTotal = data.itemCombined;
+    },
+    handleAddToCart(itemData) {
+        this.itemsArr.push(itemData);
+    },
 
 },
 data() {
     return {
         currentCategorySelected: 'Burgers',
         isActive: false,
+        selectedMenuItem: 1,
         customActiveClass: 'custom-active-class',
         selectedItem: 1,
         numOfTriggers: 0,
+        recievedPriceTotal: 0,
+        recievedItemNameTotal: '',
+        itemsArr: [],
 
         Burgers: [
         { value: 1 , name: "Bigmac", width: 250, urlSource: 'src/assets/bigmac.png', price: 4.2 },

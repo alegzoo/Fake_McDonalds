@@ -1,7 +1,7 @@
 <template>
   <v-card class="list-class pt-5 pb-3 h-60 w-auto">
       <v-list v-model="selectedItem" flat no-gutters style="padding: 0;" class="pl-4">
-          <MenuBarButton :value="1" title="Burgers" imageUrl="src/assets/burgers.svg" :width="40" @click="currentCategorySelected = 'Burgers'"/>
+          <MenuBarButton :value="1" title="Burgers" imageUrl="src/assets/burgers.svg" :width="40" @click="currentCategorySelected('Burgers')"/>
           <MenuBarButton :value="2" title="Additions" imageUrl="src/assets/additions.svg" :width="33" @click="currentCategorySelected = 'Additions'"/>
           <MenuBarButton :value="3" title="Sauces" imageUrl="src/assets/sauces.svg" :width="38" @click="currentCategorySelected = 'Sauces'"/>
           <MenuBarButton :value="4" title="Desserts" imageUrl="src/assets/deserts.svg" :width="24" @click="currentCategorySelected = 'Desserts'"/>
@@ -26,9 +26,13 @@ export default {
 components: { 
   MenuBarButton,
 },
+methods: {
+  currentCategorySelected(category) {
+    this.$emit('selected-item-changed', newSelectedItem);
+  }
+},
 data() {
   return {
-
   }
 }
 }
