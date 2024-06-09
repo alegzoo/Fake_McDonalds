@@ -1,58 +1,19 @@
-# essentials
+# McDonald's frontend Kiosk Emulation WebApp
 
-## Project setup
+# Project Overview
+This web application emulates the ordering process at a McDonald's kiosk, providing a realistic user experience from selecting items to printing the bill. It's designed to help users understand and practice the functionalities of a modern fast-food ordering system.
 
-```
-# yarn
-yarn
+# Features
+- **Menu Browsing**: Browse through a comprehensive menu with various categories like burgers, beverages, desserts, and more.<br>
+- **Customizable Orders**: Customize orders by selecting or deselecting ingredients, changing portion sizes, and adding special requests.<br>
+- **Order Summary**: View a detailed summary of the order before finalizing.<br>
+- **Bill Printing**: Print a receipt of the order, emulating the actual kiosk experience.<br>
+- **Responsive Design**: Optimized for both desktop and touchscreen devices. <br>
+  
+# Technologies Used
+- **Frontend Framework:** Vue.js<br>
+- **Language**: TypeScript<br>
+- **Styling**: SCSS <br>
 
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-### Compiles and hot-reloads for development
-
-```
-# yarn
-yarn dev
-
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-```
-
-### Compiles and minifies for production
-
-```
-# yarn
-yarn build
-
-# npm
-npm run build
-
-# pnpm
-pnpm build
-```
-
-### Lints and fixes files
-
-```
-# yarn
-yarn lint
-
-# npm
-npm run lint
-
-# pnpm
-pnpm lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://vitejs.dev/config/).
-# Fake_McDonalds
+# Project status
+in progress...
