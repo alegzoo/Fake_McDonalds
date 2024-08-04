@@ -68,8 +68,6 @@ export default {
       let priceForItems = this.recievedNumOfItems * this.itemPrice;
       console.log('Price total: ',priceForItems);
       this.$emit('addToCartItemInfo', { price: priceForItems, title: itemCombined });
-
-      
     }
   }
 };
